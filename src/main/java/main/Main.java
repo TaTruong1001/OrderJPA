@@ -23,6 +23,7 @@ public class Main {
        // findById(1);
        //  findByCurrentMonth();
        // findByproductName("Java");
+        findTotalAmountMoreThan(1000);
     }
     public static void getAllUsingQuery(){
         List<OrderEntity> orderEntities = orderRepository.getAll();
@@ -59,9 +60,16 @@ public class Main {
                 }
             }
         }
-//        public static void findOrdersWhichTotalAmountThan(double unitPrice, int quantity){
-//        List<OrderDetailEntity> orderDetailEntities = orderDetailRepository.findBy
-//        }
+      public static void findTotalAmountMoreThan(double amount){
+        List<OrderEntity> orderEntities = orderRepository.findTotalAmountMoreThan(amount);
+        if(orderEntities != null){
+            System.out.println("\nFind ");
+            for (OrderEntity order: orderEntities) {
+                System.out.println("\n "+order.toString());
+            }
+        }
+        }
+
 
     public static void createNewOrderWithOrderDetail(){
         OrderEntity orderEntity = createNewOrder();
