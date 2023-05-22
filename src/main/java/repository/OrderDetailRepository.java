@@ -11,4 +11,4 @@ import java.util.List;
 public interface OrderDetailRepository extends CrudRepository<OrderDetailEntity, Integer> {
     List<OrderDetailEntity> findByProductName(String name);
 
-    List<OrderDetailEntity> findBy
+}

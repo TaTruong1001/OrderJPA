@@ -59,9 +59,9 @@ public class Main {
                 }
             }
         }
-        public static void findOrdersWhichTotalAmountThan(double unitPrice, int quantity){
-        List<OrderDetailEntity> orderDetailEntities = orderDetailRepository.findBy
-        }
+//        public static void findOrdersWhichTotalAmountThan(double unitPrice, int quantity){
+//        List<OrderDetailEntity> orderDetailEntities = orderDetailRepository.findBy
+//        }
 
     public static void createNewOrderWithOrderDetail(){
         OrderEntity orderEntity = createNewOrder();
