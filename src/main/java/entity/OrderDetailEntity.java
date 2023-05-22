@@ -55,14 +55,5 @@ public class OrderDetailEntity {
         this.order = order;
     }
 
-    @Override
-    public String toString() {
-        return "OrderDetailEntity{" +
-                "id=" + id +
-                ", productName='" + productName + '\'' +
-                ", quantity=" + quantity +
-                ", unitPrice=" + unitPrice +
-                ", order=" + order +
-                '}';
-    }
+
 }

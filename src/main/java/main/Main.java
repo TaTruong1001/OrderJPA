@@ -18,10 +18,11 @@ public class Main {
     static OrderDetailRepository orderDetailRepository = (OrderDetailRepository) context.getBean("orderDetailRepository");
 
     public static void main(String[] args) {
-       // createNewOrederWithOrderDetail();
-      //  getAllUsingQuery();
-        findById(1);
-     //  findByCurrentMonth();
+        // createNewOrederWithOrderDetail();
+        //  getAllUsingQuery();
+       // findById(1);
+       //  findByCurrentMonth();
+       // findByproductName("Java");
     }
     public static void getAllUsingQuery(){
         List<OrderEntity> orderEntities = orderRepository.getAll();
@@ -41,17 +42,27 @@ public class Main {
 
     }
     public static void findByCurrentMonth(){
-       List<OrderEntity> orderEntity = orderRepository.findByCurrentMonth();
+        List<OrderEntity> orderEntity = orderRepository.findByCurrentMonth();
         if (orderEntity != null){
             System.out.println("\nFind ");
-         for (OrderEntity order: orderEntity)
-            System.out.println(orderEntity.toString());
+            for (OrderEntity order: orderEntity) {
+                System.out.println("\n "+order.toString());
+            }
+        }
+    }
+        public static void findByproductName(String name){
+        List<OrderDetailEntity> orderDetailEntities = orderDetailRepository.findByProductName(name);
+            if(orderDetailEntities != null){
+                System.out.println("\nFind ");
+                for (OrderDetailEntity order: orderDetailEntities) {
+                    System.out.println("\n "+order.getOrder().toString());
+                }
+            }
+        }
+        public static void findOrdersWhichTotalAmountThan(double unitPrice, int quantity){
+        List<OrderDetailEntity> orderDetailEntities = orderDetailRepository.findBy
+        }
 
-    }
-    }
-//    public static void findByproductName(String name){
-//        List<OrderEntity> orderEntities = orderDetailRepository.
-//    }
     public static void createNewOrderWithOrderDetail(){
         OrderEntity orderEntity = createNewOrder();
         orderRepository.save(orderEntity);

@@ -15,7 +15,7 @@ public class OrderEntity {
     private LocalDate orderDate;
     private String customerName;
     private String customerAddress;
-    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
     private List<OrderDetailEntity> orderDetail;
 
     public int getId() {
